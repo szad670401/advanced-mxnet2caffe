@@ -21,3 +21,9 @@
 - Deconvolution
 - clip
 - Reshape
+
+Tested models
++ mxnet-SSH
++ Mobilenet-V2
++ resnet-50
++ all models from insightface model zoo
