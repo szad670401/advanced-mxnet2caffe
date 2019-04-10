@@ -19,7 +19,7 @@
 - elemwise_add
 - UpSampling
 - Deconvolution
-- clip
+- Clip
 - Reshape
 
 ### Tested models
