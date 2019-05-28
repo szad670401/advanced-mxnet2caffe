@@ -1,4 +1,4 @@
-# Advanced-mxnet2caffe
+# Advanced-Mxnet2Caffe
 
 ### Operator Support Lists
 
@@ -23,7 +23,17 @@
 - Reshape
 
 ### Tested models
-+ mxnet-SSH
-+ Mobilenet-V2
-+ resnet-50
-+ all models from insightface model zoo
++ Mxnet-SSH
++ MobileNet-V2
++ Resnet-50
++ RetinaFace with ( Resnet-50 ,Mobilenet 0.25 backbone)
++ All models from Insightface Model Zoo .
+
+### Note&Bugs
+
+The convertor Is not fully automatically, The convertor not 
+
++ if you wanna convert  upsampling operator , the convertor will convert Upsampling operator to Deconvolution in Caffe , The Deconvolution channels need to be set (in prototxt_basic.py names_output).
++ If you use Flatten Layer ,You need to manually to connect them becasuse the converted compute graph will be divided into two parts.
++ If convert a detection model. You need to remove the anchor process and put it into post process.
++ Usually,If you find that conversion errors, please set the prefix name of you backbone network in mxnet2caffe.py.
