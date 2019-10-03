@@ -15,7 +15,10 @@ def data(txt_file, info):
   txt_file.write('  type: "Input"\n')
   txt_file.write('  top: "data"\n')
   txt_file.write('  input_param {\n')
-  txt_file.write('    shape: { dim: 1 dim: 3 dim: 512 dim: 1224 }\n') # TODO
+  txt_file.write('    shape: {{ dim: {} dim: {} dim: {} dim: {} }}\n'.format(info['shape'][0],
+                                                                             info['shape'][1],
+                                                                             info['shape'][2],
+                                                                             info['shape'][3]))
   txt_file.write('  }\n')
   txt_file.write('}\n')
   txt_file.write('\n')
