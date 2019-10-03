@@ -11,7 +11,7 @@ except ImportError:
     sys.path.append(os.path.join(curr_path, "/Users/yujinke/me/caffe/python"))
     import caffe
 
-
+from find import *
 
 import time
 import os
@@ -42,7 +42,8 @@ print('%d KEYS' %len(all_keys))
 print('----------------------------------\n')
 print('VALID KEYS:')
 
-backbone = "hstage1"
+# backbone = "hstage1"
+backbone = find_backbone(args.mx_model + '-symbol.json')
 
 for i_key,key_i in enumerate(all_keys):
 
